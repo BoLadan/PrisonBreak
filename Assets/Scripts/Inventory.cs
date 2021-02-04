@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour
         return items.Contains(i);
     }
 
-    public bool CanOpenDoor(int door)
+    public bool CanOpenDoor(int id)
     {
         bool result = false;
 
@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
         {
             if (item is AccessItem)
             {
-                if (((AccessItem) item).OpensDoor(door))
+                if (((AccessItem) item).OpensDoor(id))
                 {
                     result = true;
                 }
