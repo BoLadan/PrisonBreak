@@ -2,22 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory
 {
-    private List<Item> items = new List<Item>();
+    private List<Item> items;
     private float weight;
-    public float maximumWeight = 100;
+    private float maximumWeight;
 
-    // Start is called before the first frame update
-    void Start()
+    public Inventory()
     {
-        
+        items = new List<Item>();
+        weight = 0;
+        maximumWeight = 100;
     }
 
-    // Update is called once per frame
-    void Update()
+    //door ': this()' word eerst de eerste constructor uitgevoerd en daarna kan de flaot maximumWeight aangepast worden aangezien je dei als enige wilt aanpassen in deeze situatie.
+    // 'this()' word dus als basis gebruikt
+    public Inventory(float maximumWeight) : this()
     {
-        
+        this.maximumWeight = maximumWeight;
+    }
+
+    public bool SetMaximumWeight(float maxWeight)
+    {
+        if (maxWeight >= weight)
+        {
+            maximumWeight = maxWeight;
+            return true;
+        }
+        return false;
     }
 
     public bool AddItem(Item i)
@@ -85,12 +97,12 @@ public class Inventory : MonoBehaviour
 
     public void DebugInventory()
     {
-        print("Inventory has: " + Count() + " Items");
-        print("Total weight: " + GetCurrentWeight());
+        Debug.Log("Inventory has: " + Count() + " Items");
+        Debug.Log("Total weight: " + GetCurrentWeight());
 
         foreach (Item item in items)
         {
-            print(item.GetName()+ "-------" + item.GetWeight() + "Kg");
+            Debug.Log(item.GetName()+ "-------" + item.GetWeight() + "Kg");
         }
     }
 }
