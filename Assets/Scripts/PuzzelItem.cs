@@ -31,9 +31,9 @@ public class PuzzelItem : Item
         return solved;
     }
 
-    public bool CheckForAnswer(string m_answer)
+    public bool CheckForAnswer(string possibleAsnwer)
     {
-        if (m_answer == answer)
+        if (possibleAsnwer == answer)
         {
             solved = true;
         }
