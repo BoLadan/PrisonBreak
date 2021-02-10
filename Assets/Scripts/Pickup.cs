@@ -10,6 +10,7 @@ public abstract class Pickup : MonoBehaviour, IInteractable
     void Start()
     {
         gameObject.tag = "Interactable";
+        GameManager.Instance.RegisterPickupItem(this);
     }
 
     public void Action(PlayerManager player)
@@ -17,8 +18,19 @@ public abstract class Pickup : MonoBehaviour, IInteractable
         // is there is enough space in the inventory you can pick up the item and it'll disapear
         if (player.AddItem(CreateItem()))
         {
-            Destroy(gameObject);
+            Remove();
         }
+    }
+
+    public void Remove()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Respawn(Vector3 position)
+    {
+        gameObject.transform.position = new Vector3(position.x, position.y, position.z);
+        gameObject.SetActive(true);
     }
 
     public abstract Item CreateItem();

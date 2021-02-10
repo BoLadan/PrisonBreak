@@ -14,6 +14,26 @@ public class PlayerManager : MonoBehaviour
         inventory = new Inventory(initialMaxWeight);
     }
 
+    private void Update()
+    {
+        //dropping item
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            DropItem("Key of Doom");
+        }
+    }
+
+    public void DropItem(string name)
+    {
+        Item i = inventory.GetItemWithName(name);
+
+        if (i != null)
+        {
+            inventory.RemoveItem(i);
+            GameManager.Instance.DropItem(name, transform.position + transform.forward);
+        }
+    }
+
     public bool AddItem(Item i)
     {
         return inventory.AddItem(i);
