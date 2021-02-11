@@ -40,6 +40,7 @@ public class Inventory
         {
             items.Add(i);
             weight += i.GetWeight();
+            GetInventoryItemNames();
             return true;
         }
         else
@@ -71,8 +72,18 @@ public class Inventory
                 return items[i];
             }
         }
-
         return null;
+    }
+
+    public string[] GetInventoryItemNames()
+    {
+        string[] names = new string[items.Count];
+
+        for (int i = 0; i < names.Length; i++)
+        {
+            names[i] = items[i].GetName();
+        }
+        return names;
     }
 
     public bool HasItem(Item i)

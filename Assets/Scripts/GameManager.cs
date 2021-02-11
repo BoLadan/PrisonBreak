@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public InventoryUIManager uiManager;
+
     private Dictionary<string, Pickup> worldItems = new Dictionary<string, Pickup>();
 
     private void Awake()
@@ -36,5 +38,15 @@ public class GameManager : MonoBehaviour
     public void DropItem(string name, Vector3 position)
     {
         worldItems[name].Respawn(position);
+    }
+
+    public Pickup GetPickupWithName(string name)
+    {
+        return worldItems[name];
+    }
+
+    public void TriggerUIUpdate()
+    {
+        uiManager.UpdateUi();
     }
 }

@@ -7,6 +7,9 @@ public abstract class Pickup : MonoBehaviour, IInteractable
     public string itemName;
     public float weight;
 
+    [Space(10)]
+    public Sprite itemSprite;
+
     void Start()
     {
         gameObject.tag = "Interactable";
