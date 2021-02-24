@@ -37,7 +37,9 @@ public class Test : MonoBehaviour
         Item i = new AccessItem("Key of Doom", 10, 1);
         Item j = new BonusItem("Patato of the gods", 50, 50);
         Item k = new BonusItem("Globe of eternal sunshine", 50, 100);
+        Item l = new PuzzelItem("Riddle01", 10, "What is an lama of islam?", "Islama");
 
+        //added item
         if (inventory.AddItem(i))
         {
             print("Added " + i.GetName() + " to the inventory");
@@ -47,6 +49,7 @@ public class Test : MonoBehaviour
             print("Failed to add " + i.GetName() + " to the inventory");
         }
 
+        //added item
         if (inventory.AddItem(j))
         {
             print("Added " + j.GetName() + " to the inventory");
@@ -56,6 +59,7 @@ public class Test : MonoBehaviour
             print("Failed to add " + j.GetName() + " to the inventory");
         }
 
+        //added item
         if (inventory.AddItem(k))
         {
             print("Added " + k.GetName() + " to the inventory");
@@ -63,6 +67,16 @@ public class Test : MonoBehaviour
         else
         {
             print("Failed to add " + k.GetName() + " to the inventory");
+        }
+
+        //added riddle
+        if (inventory.AddItem(l))
+        {
+            print("Added " + l.GetName() + " to the inventory");
+        }
+        else
+        {
+            print("Failed to add " + l.GetName() + " to the inventory");
         }
 
         inventory.DebugInventory();
@@ -119,6 +133,23 @@ public class Test : MonoBehaviour
         else
         {
             print("Inventory doenst have key of doom");
+        }
+
+        TestPuzzelItemFunctionallities(l);
+    }
+
+    private void TestPuzzelItemFunctionallities(Item i)
+    {
+        if (i is PuzzelItem)
+        {
+            //Casting
+            PuzzelItem pi = (PuzzelItem) i;
+
+            print("========== Testing PuzzelItem functionallities ==========");
+
+            print("The riddle of " + pi.GetName() + " is: " + pi.GetRiddle());
+            print("the answer you gave is: " + pi.GetAnswer());
+            print("Your answer is:" + pi.CheckForAnswer(pi.GetAnswer()));
         }
     }
 
