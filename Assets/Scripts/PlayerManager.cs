@@ -89,12 +89,12 @@ public class PlayerManager : MonoBehaviour
         return inventory.CanOpenDoor(id);
     }
 
-    private void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.CompareTag("Interactable"))
-        {
-            IInteractable i = coll.gameObject.GetComponent<IInteractable>();
-            i.Action(this);
-        }
-    }
+    //private void OnCollisionEnter(Collision coll)
+    //{
+    //    if (coll.gameObject.CompareTag("Interactable"))
+    //    {
+    //        IInteractable i = coll.gameObject.GetComponent<IInteractable>();
+    //        i.Action(this);
+    //    }
+    //}
 }
