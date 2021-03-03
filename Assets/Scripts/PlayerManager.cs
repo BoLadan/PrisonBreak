@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistanceRaycast))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
+            //Debug.Log("Did Hit");
 
             if (hit.collider.gameObject.CompareTag("Interactable"))
             {
@@ -49,7 +49,7 @@ public class PlayerManager : MonoBehaviour
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxDistanceRaycast, Color.red);
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
 
             fKey.SetActive(false);
         }
