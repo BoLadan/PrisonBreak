@@ -6,10 +6,20 @@ using SimpleJSON;
 
 public class APIConnection : MonoBehaviour
 {
+    public static APIConnection instance { get; private set; }
+
     private string authKey = "323ccac15d8c7ab9ce00f9e69320d48015d2eb89";
     private string gamerTag;
     private string gameName;
     private string gameId;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     IEnumerator GetRequest(string url)
     {
@@ -122,6 +132,11 @@ public class APIConnection : MonoBehaviour
         //StartCoroutine(GetRequest("https://xapi.us/v2/2535439706856428/gamercard"));
         //StartCoroutine(GetGameId("https://xapi.us/v2/2535439706856428/xboxonegames"));
         StartCoroutine(GetAchivement("https://xapi.us/v2/2535439706856428/achievements/1717113201"));
+    }
+
+    public string GetAuthKey()
+    {
+        return authKey;
     }
 
     public string GetGamerTag()

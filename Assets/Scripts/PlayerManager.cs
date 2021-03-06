@@ -11,6 +11,11 @@ public class PlayerManager : MonoBehaviour
 
     [Space(10)]
     public GameObject fKey;
+    [SerializeField]
+    private GameObject inputfield;
+
+    [Space(10)]
+    public List<GameObject> objectsToLock = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         {
             DropItem("Key of Doom");
         }
+
     }
 
     private void FixedUpdate()
@@ -87,5 +93,25 @@ public class PlayerManager : MonoBehaviour
     public bool CanOpenDoor(int id)
     {
         return inventory.CanOpenDoor(id);
+    }
+
+    public void Lock()
+    {
+        Debug.Log("Lock word uitgevoerd");
+        for (int i = 0; i < objectsToLock.Count; i++)
+        {
+            objectsToLock[i].GetComponent<MonoBehaviour>().enabled = false;
+        }
+
+        inputfield.SetActive(true);
+    }
+
+    public void UnLock()
+    {
+        for (int i = 0; i < objectsToLock.Count; i++)
+        {
+            objectsToLock[i].GetComponent<MonoBehaviour>().enabled = true;
+        }
+        inputfield.SetActive(false);
     }
 }
