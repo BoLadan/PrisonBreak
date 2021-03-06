@@ -31,15 +31,15 @@ public class PlayerManager : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistanceRaycast))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, maxDistanceRaycast))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             //Debug.Log("Did Hit");
 
             if (hit.collider.gameObject.CompareTag("Interactable"))
             {
                 fKey.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.G))
                 {
                     IInteractable i = hit.collider.gameObject.GetComponent<IInteractable>();
                     i.Action(this);
@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxDistanceRaycast, Color.red);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * maxDistanceRaycast, Color.red);
             //Debug.Log("Did not Hit");
 
             fKey.SetActive(false);
@@ -88,13 +88,4 @@ public class PlayerManager : MonoBehaviour
     {
         return inventory.CanOpenDoor(id);
     }
-
-    //private void OnCollisionEnter(Collision coll)
-    //{
-    //    if (coll.gameObject.CompareTag("Interactable"))
-    //    {
-    //        IInteractable i = coll.gameObject.GetComponent<IInteractable>();
-    //        i.Action(this);
-    //    }
-    //}
 }
