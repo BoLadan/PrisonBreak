@@ -14,6 +14,9 @@ public class ReciveInput : MonoBehaviour
     [SerializeField]
     private Text computerText;
 
+    [Space(10)]
+    public FinalDoor finalDoor;
+
     private void Start()
     {
         correctInput = APIConnection.instance.GetAuthKey();
@@ -34,6 +37,7 @@ public class ReciveInput : MonoBehaviour
         {
             //Access granted
             StartCoroutine(ChangeText(accessGrantedText));
+            finalDoor.open = true;
         }
         else
         {

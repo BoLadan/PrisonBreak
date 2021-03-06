@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Interactable"))
             {
                 fKey.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.G))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     IInteractable i = hit.collider.gameObject.GetComponent<IInteractable>();
                     i.Action(this);
