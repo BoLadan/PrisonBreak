@@ -6,9 +6,21 @@ using UnityEngine.UI;
 public class ReciveInput : MonoBehaviour
 {
     private string input;
+    private string correctInput;
+    private string defaultText;
+    private string accessGrantedText;
+    private string accessDeniedText;
 
     [SerializeField]
     private Text computerText;
+
+    private void Start()
+    {
+        correctInput = APIConnection.instance.GetAuthKey();
+        defaultText = computerText.text;
+        accessGrantedText = "Access Granted";
+        accessDeniedText = "Access Denied";
+    }
 
     public void GetInput(string input)
     {
@@ -18,15 +30,24 @@ public class ReciveInput : MonoBehaviour
 
     public void CheckForCorrectInput()
     {
-        if (input == APIConnection.instance.GetAuthKey())
+        if (input == correctInput)
         {
-            Debug.Log("Access Granted!");
-            computerText.text = "Access Granted";
+            //Access granted
+            StartCoroutine(ChangeText(accessGrantedText));
         }
         else
         {
-            Debug.Log("Access Denied!");
-            computerText.text = "Access Denied";
+            //Access denied
+            StartCoroutine(ChangeText(accessDeniedText));
         }
+    }
+
+    IEnumerator ChangeText(string text)
+    {
+        computerText.text = text;
+        yield return new WaitForSeconds(3);
+        computerText.text = defaultText;
+
+        yield return null;
     }
 }
