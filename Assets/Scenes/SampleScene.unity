@@ -1188,13 +1188,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 512, y: 512}
   scale: 0.94
-  baseAmplitude: 0.462
-  octaves: 4
-  lacunarity: 1.97
-  persistance: 0.683
-  offset: {x: 1269, y: 3139.2, z: 0}
-  innerRadius: 157.1
-  outerRadius: 206.4
+  baseAmplitude: 0.868
+  octaves: 5
+  lacunarity: 2.23
+  persistance: 0.731
+  offset: {x: 1920.7, y: 2893, z: 0}
+  innerRadius: -110.4
+  outerRadius: 129.2
 --- !u!1 &562719144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1825458344394520, guid: 13db0b795570e514d9ca4d905d4abb93,
