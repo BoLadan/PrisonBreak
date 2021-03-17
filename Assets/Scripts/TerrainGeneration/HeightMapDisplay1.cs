@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HeightMapDisplay : TerrainConfig
 {
-    public Material mat;
-
+    public Material mat = null;
 
     protected override void UpdateTerrainData(float[,] data)
     {
