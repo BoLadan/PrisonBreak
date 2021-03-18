@@ -10,6 +10,11 @@ public class InventoryUIManager : MonoBehaviour
     [Space(10)]
     public GameObject invSlot;
 
+    private bool active;
+
+    private Vector2 visPos;
+    private Vector2 invisPos;
+
     public void UpdateUi()
     {
         ClearItems();
@@ -32,5 +37,31 @@ public class InventoryUIManager : MonoBehaviour
         }
     }
 
-    
+    private void Start()
+    {
+        visPos = transform.position;
+        invisPos = new Vector2(transform.position.x, transform.position.y - 1000);
+
+        transform.position = invisPos;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            active = !active;
+
+            if (active)
+            {
+                player.Lock(false);
+                transform.position = visPos;
+            }
+            else if (!active)
+            {
+                player.UnLock();
+                transform.position = invisPos;
+            }
+        }
+    }
+
 }

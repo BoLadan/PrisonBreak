@@ -1622,7 +1622,7 @@ MonoBehaviour:
     heightTrigger: 0.2
     fadeAmount: 0.1
   - name: Rock
-    heightTrigger: 2
+    heightTrigger: 1
     fadeAmount: 0
   innerRadius: 225.4
   outerRadius: 418.01

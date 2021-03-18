@@ -97,15 +97,17 @@ public class PlayerManager : MonoBehaviour
         return inventory.CanOpenDoor(id);
     }
 
-    public void Lock()
+    public void Lock(bool showInputField)
     {
         //Debug.Log("Lock word uitgevoerd");
         for (int i = 0; i < objectsToLock.Count; i++)
         {
             objectsToLock[i].GetComponent<MonoBehaviour>().enabled = false;
         }
-
-        inputfield.SetActive(true);
+        if (showInputField)
+        {
+            ShowInputField(true);
+        }  
     }
 
     public void UnLock()
@@ -114,6 +116,11 @@ public class PlayerManager : MonoBehaviour
         {
             objectsToLock[i].GetComponent<MonoBehaviour>().enabled = true;
         }
-        inputfield.SetActive(false);
+        ShowInputField(false);
+    }
+
+    private void ShowInputField(bool state)
+    {
+        inputfield.SetActive(state);
     }
 }

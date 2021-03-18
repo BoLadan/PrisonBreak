@@ -12,6 +12,6 @@ public class Computer : MonoBehaviour, IInteractable
 
     public void Action(PlayerManager player)
     {
-        player.Lock();
+        player.Lock(true);
     }
 }
