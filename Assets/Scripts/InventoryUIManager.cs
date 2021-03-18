@@ -19,7 +19,7 @@ public class InventoryUIManager : MonoBehaviour
         {
             Pickup pi = GameManager.Instance.GetPickupWithName(names[i]);
             GameObject go = Instantiate(invSlot, transform);
-
+            go.GetComponent<InventorySlot>().SetItemName(pi.itemName);
             go.GetComponent<Image>().sprite = pi.itemSprite;
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance { get; private set; }
+
     private Inventory inventory;
 
     public float initialMaxWeight = 100;
@@ -17,6 +19,14 @@ public class PlayerManager : MonoBehaviour
     [Space(10)]
     public List<GameObject> objectsToLock = new List<GameObject>();
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +35,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        //dropping item
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            DropItem("Key of Doom");
-        }
 
-    }
-
-    private void FixedUpdate()
-    {
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, maxDistanceRaycast))
@@ -59,6 +60,7 @@ public class PlayerManager : MonoBehaviour
 
             fKey.SetActive(false);
         }
+
     }
 
     public void DropItem(string name)
@@ -97,7 +99,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Lock()
     {
-        Debug.Log("Lock word uitgevoerd");
+        //Debug.Log("Lock word uitgevoerd");
         for (int i = 0; i < objectsToLock.Count; i++)
         {
             objectsToLock[i].GetComponent<MonoBehaviour>().enabled = false;
