@@ -70,7 +70,8 @@ public class PlayerManager : MonoBehaviour
         if (i != null)
         {
             inventory.RemoveItem(i);
-            GameManager.Instance.DropItem(name, transform.position + transform.forward);
+            Vector3 dropPos = new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z);
+            GameManager.Instance.DropItem(name, dropPos + transform.forward);
             GameManager.Instance.TriggerUIUpdate();
         }
     }

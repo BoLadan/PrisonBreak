@@ -8,6 +8,6 @@ public class Book : Pickup
 
     public override Item CreateItem()
     {
-        return new BookItem(name, weight, discription);
+        return new BookItem(itemName, weight, discription);
     }
 }

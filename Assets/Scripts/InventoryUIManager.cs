@@ -51,10 +51,19 @@ public class InventoryUIManager : MonoBehaviour
         {
             active = !active;
 
+            //proberen de hotbar naar beneden te doen en de speler te unlocken als de hotbar leeg is
             if (active)
             {
-                player.Lock(false);
-                transform.position = visPos;
+                if (transform.childCount > 0)
+                {
+                    player.Lock(false);
+                    transform.position = visPos;
+                }
+                else if (transform.childCount <= 0)
+                {
+                    player.UnLock();
+                }
+                
             }
             else if (!active)
             {

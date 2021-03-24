@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public Pickup GetPickupWithName(string name)
     {
+        Debug.Log("Getting: " + name);
         return worldItems[name];
     }
 
