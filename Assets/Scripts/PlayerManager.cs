@@ -99,7 +99,6 @@ public class PlayerManager : MonoBehaviour
 
     public void Lock(bool showInputField)
     {
-        //Debug.Log("Lock word uitgevoerd");
         for (int i = 0; i < objectsToLock.Count; i++)
         {
             objectsToLock[i].GetComponent<MonoBehaviour>().enabled = false;

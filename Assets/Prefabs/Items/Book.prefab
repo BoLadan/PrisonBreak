@@ -415,6 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4906158186107370960}
   - component: {fileID: 1157322360578323824}
+  - component: {fileID: 3160615275490393323}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -456,6 +457,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.018354416, z: 0.053955078}
   m_Center: {x: 0, y: 0.008526802, z: 0.0072021484}
+--- !u!114 &3160615275490393323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719004508608898922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5585f941f773cbf4494e53e06a47ef7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Journal of Captain ChronoMax
+  weight: 10
+  itemSprite: {fileID: 21300000, guid: 81bd0149109187b43af4ea31bae34f54, type: 3}
+  discription: 323ccac15d8c7ab
 --- !u!1 &5794480009489862300
 GameObject:
   m_ObjectHideFlags: 0
