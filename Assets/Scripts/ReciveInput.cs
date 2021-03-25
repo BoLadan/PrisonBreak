@@ -37,6 +37,7 @@ public class ReciveInput : MonoBehaviour
         {
             //Access granted
             StartCoroutine(ChangeText(accessGrantedText));
+            APIConnection.instance.GetAchivement("https://xapi.us/v2/2535439706856428/achievements/1717113201");
             finalDoor.open = true;
         }
         else

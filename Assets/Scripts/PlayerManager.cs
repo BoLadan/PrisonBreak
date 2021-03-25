@@ -52,6 +52,10 @@ public class PlayerManager : MonoBehaviour
                     i.Action(this);
                 }
             }
+            else
+            {
+                fKey.SetActive(false);
+            }
         }
         else
         {

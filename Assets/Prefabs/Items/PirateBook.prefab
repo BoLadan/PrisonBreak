@@ -1242,8 +1242,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7151175082457635845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2362.7307, y: 25.109726, z: 2910.5203}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2362.7307, y: 25.102, z: 2910.5203}
+  m_LocalScale: {x: 0.24789067, y: 0.24789067, z: 0.24789067}
   m_Children:
   - {fileID: 4874456990551764884}
   - {fileID: 4919742173166789542}
@@ -1283,7 +1283,8 @@ MonoBehaviour:
   itemName: Journal of captain LoBadonVI
   weight: 10
   itemSprite: {fileID: 21300000, guid: 81bd0149109187b43af4ea31bae34f54, type: 3}
-  discription: 9ce00f9e69320
+  discription: 'You read about the grand sea voyage of Captain LoBadonVI together
+    with his fleet. On the first page you see a peculiar code : 9ce00f9e69320'
 --- !u!65 &5372874985599033039
 BoxCollider:
   m_ObjectHideFlags: 0

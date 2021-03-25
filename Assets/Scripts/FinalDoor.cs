@@ -27,7 +27,7 @@ public class FinalDoor : MonoBehaviour
     {
         if (transform.position != dest)
         {
-            transform.position = Vector3.Lerp(transform.position, dest, 0.05f);
+            transform.position = Vector3.Lerp(transform.position, dest, 0.001f);
         }
     }
 }

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is allready an object with the name: " + i.itemName + " There can not be two items with the same name.");
+            Debug.LogWarning("There is allready an object with the name: " + i.itemName + " There can not be two items with the same name.");
         }
         
     }

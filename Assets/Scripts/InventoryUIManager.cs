@@ -9,6 +9,7 @@ public class InventoryUIManager : MonoBehaviour
 
     [Space(10)]
     public GameObject invSlot;
+    public GameObject uiItem;
 
     private bool active;
 
@@ -43,6 +44,7 @@ public class InventoryUIManager : MonoBehaviour
         invisPos = new Vector2(transform.position.x, transform.position.y - 1000);
 
         transform.position = invisPos;
+        uiItem.SetActive(false);
     }
 
     private void Update()
@@ -58,6 +60,7 @@ public class InventoryUIManager : MonoBehaviour
                 {
                     player.Lock(false);
                     transform.position = visPos;
+                    uiItem.SetActive(true);
                 }
                 else if (transform.childCount <= 0)
                 {
@@ -69,6 +72,7 @@ public class InventoryUIManager : MonoBehaviour
             {
                 player.UnLock();
                 transform.position = invisPos;
+                uiItem.SetActive(false);
             }
         }
     }

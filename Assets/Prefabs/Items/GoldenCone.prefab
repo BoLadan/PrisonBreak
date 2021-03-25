@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184461270975172818}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -33.41564, y: 0.6550012, z: 2.3156164}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -33.418, y: 0.64005, z: 2.3116}
+  m_LocalScale: {x: 2.351064, y: 2.351064, z: 2.351064}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Cone of Fortune
-  weight: 5
+  weight: 10
   itemSprite: {fileID: 21300000, guid: 9a010245fd32f17409771688daec9bb6, type: 3}
   points: 15
 --- !u!65 &2715923995538342940

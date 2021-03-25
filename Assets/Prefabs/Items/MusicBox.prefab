@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 718609252038506129}
   - component: {fileID: 2648931326534071079}
   - component: {fileID: -5254283961126584140}
+  - component: {fileID: 7959219520465677597}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194450702261562411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2362.3914, y: 35.624638, z: 2917.3547}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2362.3, y: 35.549, z: 2917.3}
+  m_LocalScale: {x: 2.0641, y: 2.0641, z: 2.0641}
   m_Children:
   - {fileID: 9131546563266440003}
   - {fileID: 2117148405170923409}
@@ -77,6 +78,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7959219520465677597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194450702261562411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e3a2706c268954291917feac8361e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Music box
+  weight: 10
+  itemSprite: {fileID: 21300000, guid: 9a010245fd32f17409771688daec9bb6, type: 3}
+  points: 25
 --- !u!1 &364706654011538804
 GameObject:
   m_ObjectHideFlags: 0

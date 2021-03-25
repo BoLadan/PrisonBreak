@@ -432,8 +432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5719004508608898922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2361.907, y: 30.332085, z: 2919.5374}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2361.907, y: 30.267, z: 2919.5}
+  m_LocalScale: {x: 7.177908, y: 7.177908, z: 7.177908}
   m_Children:
   - {fileID: 667434085095598966}
   - {fileID: 4735426534180358532}
@@ -456,8 +456,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.018354416, z: 0.053955078}
-  m_Center: {x: 0, y: 0.008526802, z: 0.0072021484}
+  m_Size: {x: 0.07608663, y: 0.018354416, z: 0.053955078}
+  m_Center: {x: -0.0008333298, y: 0.008526803, z: 0.007202149}
 --- !u!114 &3160615275490393323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +473,9 @@ MonoBehaviour:
   itemName: Journal of Captain ChronoMax
   weight: 10
   itemSprite: {fileID: 21300000, guid: 81bd0149109187b43af4ea31bae34f54, type: 3}
-  discription: 323ccac15d8c7ab
+  discription: 'Captain ChronoMax was a weird one. In his logbook was again a code,
+    but it was also written that the fleet keeps getting slowed down because he sometimes
+    jumped off the boat : 323ccac15d8c7ab'
 --- !u!54 &-6650179882609020769
 Rigidbody:
   m_ObjectHideFlags: 0

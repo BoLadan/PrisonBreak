@@ -90,7 +90,7 @@ public class APIConnection : MonoBehaviour
         }
     }
 
-    IEnumerator GetAchivement(string url)
+    public IEnumerator GetAchivement(string url)
     {
         // this pauses the webrequest untill the request returns
         using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
@@ -131,7 +131,7 @@ public class APIConnection : MonoBehaviour
     {
         //StartCoroutine(GetRequest("https://xapi.us/v2/2535439706856428/gamercard"));
         //StartCoroutine(GetGameId("https://xapi.us/v2/2535439706856428/xboxonegames"));
-        StartCoroutine(GetAchivement("https://xapi.us/v2/2535439706856428/achievements/1717113201"));
+        //StartCoroutine(GetAchivement("https://xapi.us/v2/2535439706856428/achievements/1717113201"));
     }
 
     public string GetAuthKey()
