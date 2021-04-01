@@ -16,6 +16,9 @@ public class InventoryUIManager : MonoBehaviour
     private Vector2 visPos;
     private Vector2 invisPos;
 
+    private Vector2 UiVisPos;
+    private Vector2 UiInvisPos;
+
     public void UpdateUi()
     {
         ClearItems();
@@ -26,6 +29,12 @@ public class InventoryUIManager : MonoBehaviour
             Pickup pi = GameManager.Instance.GetPickupWithName(names[i]);
             GameObject go = Instantiate(invSlot, transform);
             go.GetComponent<InventorySlot>().SetItemName(pi.itemName);
+
+            if (pi.itemDiscription != null)
+            {
+                go.GetComponent<InventorySlot>().SetItemDiscription(pi.itemDiscription);
+            }
+
             go.GetComponent<Image>().sprite = pi.itemSprite;
         }
     }
@@ -41,10 +50,12 @@ public class InventoryUIManager : MonoBehaviour
     private void Start()
     {
         visPos = transform.position;
+        UiVisPos = uiItem.transform.position;
         invisPos = new Vector2(transform.position.x, transform.position.y - 1000);
+        UiInvisPos = new Vector2(uiItem.transform.position.x, uiItem.transform.position.y - 1000);
 
         transform.position = invisPos;
-        uiItem.SetActive(false);
+        uiItem.transform.position = UiInvisPos;
     }
 
     private void Update()
@@ -60,7 +71,7 @@ public class InventoryUIManager : MonoBehaviour
                 {
                     player.Lock(false);
                     transform.position = visPos;
-                    uiItem.SetActive(true);
+                    uiItem.transform.position = UiVisPos;
                 }
                 else if (transform.childCount <= 0)
                 {
@@ -72,7 +83,7 @@ public class InventoryUIManager : MonoBehaviour
             {
                 player.UnLock();
                 transform.position = invisPos;
-                uiItem.SetActive(false);
+                uiItem.transform.position = UiInvisPos;
             }
         }
     }
